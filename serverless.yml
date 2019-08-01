@@ -1,0 +1,45 @@
+service:
+  name: stratus
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-aws-static-file-handler/plugins/BinaryMediaTypes
+
+custom:
+  webpack:
+    includeModules: true
+  apiGateway:
+    binaryMediaTypes:
+      - "*/*"
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage, 'local'}
+  profile: ${file(env.yml):global.AWS_CREDENTIALS_PROFILE}
+  region: ${file(env.yml):global.AWS_PROVIDER_REGION}
+  deploymentBucket: ${file(env.yml):global.DEPLOYMENT_BUCKET}
+  package:
+    excludeDevDependencies: true
+    exclude:
+      - .git/**
+      - .vscode/**
+  environment:
+    STAGE: ${self:provider.stage}
+    SITE_URL: ${file(env.yml):${self:provider.stage}.SITE_URL}
+
+functions:
+  app:
+    handler: handler.run
+    memorySize: 256
+    timeout: 30
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
