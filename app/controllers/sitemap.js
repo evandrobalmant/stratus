@@ -25,9 +25,19 @@ module.exports = app => {
         });
 
         sm.add({
-            url: `${process.env.SITE_URL}/`,
+            url: `${process.env.SITE_URL}/foo`,
+            changefreq: 'daily',
+            priority: 0.8
+        });
+        sm.add({
+            url: `${process.env.SITE_URL}/foo`,
+            changefreq: 'weekly',
+            priority: 0.3
+        });
+        sm.add({
+            url: `${process.env.SITE_URL}/bar`,
             changefreq: 'monthly',
-            priority: 0.6
+            priority: 0.3
         });
 
         res.header('Content-Type', 'application/xml');

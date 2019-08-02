@@ -4,7 +4,9 @@
   "description": "API Gateway para servir sites em Node com Serverless Framework, Express, Consign, Webpack, Nunjucks.",
   "main": "handler.js",
   "scripts": {
-    "start": "serverless offline"
+    "start": "serverless offline",
+    "deploy:dev": "sls deploy --stage dev",
+    "deploy:prd": "sls deploy --stage prd"
   },
   "dependencies": {
     "consign": "^0.1.6",
@@ -26,6 +28,7 @@
     "sass-loader": "^7.1.0",
     "serverless-offline": "^5.8.0",
     "serverless-webpack": "^5.3.1",
+    "source-map-support": "^0.5.13",
     "style-loader": "^0.23.1",
     "terser-webpack-plugin": "^1.4.1",
     "url-loader": "^2.1.0",

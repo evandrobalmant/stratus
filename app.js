@@ -9,14 +9,18 @@ const app = express();
 
 app.use(cors());
 
-var env = nunjucks.configure('app/views', {
+let env = nunjucks.configure('app/views', {
     autoescape: true,
     express: app,
     watch: true
 });
 
-env.addGlobal('URL_BASE', process.env.SITE_URL);
-// env.addGlobal('URL_PATH', req.path);
+app.all('*', (req, _res, next) => {
+    env.addGlobal('URL_BASE', process.env.SITE_URL);
+    env.addGlobal('URL_PATH', req.path);
+    env.addGlobal('IS_AMP', req.path.includes('/amp'));
+    next();
+});
 
 consign()
     .include('app/controllers')
