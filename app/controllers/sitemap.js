@@ -25,14 +25,14 @@ module.exports = app => {
         });
 
         sm.add({
-            url: `${process.env.SITE_URL}/foo`,
+            url: `${process.env.SITE_URL}`,
             changefreq: 'daily',
             priority: 0.8
         });
         sm.add({
             url: `${process.env.SITE_URL}/foo`,
             changefreq: 'weekly',
-            priority: 0.3
+            priority: 0.5
         });
         sm.add({
             url: `${process.env.SITE_URL}/bar`,
