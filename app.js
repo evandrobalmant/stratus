@@ -15,9 +15,15 @@ var env = nunjucks.configure('app/views', {
     watch: true
 });
 
+env.addGlobal('URL_BASE', process.env.SITE_URL);
+// env.addGlobal('URL_PATH', req.path);
 
 consign()
     .include('app/controllers')
     .into(app);
+
+app.use((req, res) => {
+    res.status(404).render('404.html', { path: req.path });
+});
 
 module.exports = app;

@@ -3,7 +3,9 @@
 module.exports = app => {
 
     app.get('/', (req, res) => {
-        res.status(200).render('index.html');
+        res.status(200).render('index.html', {
+            foo: 'Bar'
+        });
     });
 
     app.get('/foo', (req, res) => {
