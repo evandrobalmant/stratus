@@ -4,7 +4,7 @@
   "description": "API Gateway para servir sites em Node com Serverless Framework, Express, Consign, Webpack, Nunjucks.",
   "main": "handler.js",
   "scripts": {
-    "start": "serverless offline",
+    "start": "serverless offline start",
     "deploy:dev": "sls deploy --stage dev",
     "deploy:prd": "sls deploy --stage prd"
   },
