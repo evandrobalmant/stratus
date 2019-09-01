@@ -9,17 +9,17 @@
     "deploy:prd": "sls deploy --stage prd"
   },
   "dependencies": {
-    "consign": "^0.1.6",
-    "cors": "^2.8.5",
     "express": "^4.17.1",
     "lodash": "^4.17.15",
     "nunjucks": "^3.2.0",
     "serverless-aws-static-file-handler": "^2.0.2",
     "serverless-http": "^2.0.2",
-    "sitemap": "^3.2.2"
+    "sitemap": "^3.2.2",
+    "source-map-support": "^0.5.10"
   },
   "devDependencies": {
     "aws-sdk": "^2.503.0",
+    "bootstrap": "^4.0.0",
     "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.1.0",
     "mini-css-extract-plugin": "^0.8.0",
@@ -35,6 +35,6 @@
     "webpack": "^4.39.0",
     "webpack-node-externals": "^1.7.2"
   },
-  "author": "Evandro Balmant",
+  "author": "Evandro Klimpel Balmant",
   "license": "UNLICENSED"
 }

@@ -1,6 +1,6 @@
 # Stratus (Serverless Website)
 
-Modelo de projeto de API Gateway para servir sites em [Node.js](https://nodejs.org/en/about/) com [Serverless Framework](https://serverless.com/), [Express](https://expressjs.com/pt-br/), [Consign](https://www.npmjs.com/package/consign), [Webpack](https://webpack.js.org/), [Nunjucks](https://mozilla.github.io/nunjucks/).
+Modelo de projeto de API Gateway para servir sites em [Node.js](https://nodejs.org/en/about/) com [Serverless Framework](https://serverless.com/), [Express](https://expressjs.com/pt-br/), [Webpack](https://webpack.js.org/), [Nunjucks](https://mozilla.github.io/nunjucks/).
 
 
 **Rodar local**
@@ -16,10 +16,10 @@ npm start
 
 **Deploy**
 
-DEV
+STG
 
 ```
-npm run deploy:dev
+npm run deploy:stg
 ```
 
 PRD

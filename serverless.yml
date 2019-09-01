@@ -15,11 +15,10 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   stage: ${opt:stage, 'local'}
   profile: ${file(env.yml):global.AWS_CREDENTIALS_PROFILE}
   region: ${file(env.yml):global.AWS_PROVIDER_REGION}
-  deploymentBucket: ${file(env.yml):global.DEPLOYMENT_BUCKET}
   package:
     excludeDevDependencies: true
     exclude:
@@ -28,18 +27,18 @@ provider:
   environment:
     STAGE: ${self:provider.stage}
     SITE_URL: ${file(env.yml):${self:provider.stage}.SITE_URL}
+    PUBLIC_URL: ${file(env.yml):${self:provider.stage}.PUBLIC_URL}
 
 functions:
   app:
     handler: handler.run
-    memorySize: 256
+    # role: arn:aws:iam::99999:role/xxx
+    memorySize: 512
     timeout: 30
     events:
       - http:
           path: /
           method: ANY
-          cors: true
       - http:
           path: /{proxy+}
           method: ANY
-          cors: true

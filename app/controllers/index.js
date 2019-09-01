@@ -1,19 +1,18 @@
-'use strict';
+const express = require('express');
+const router = express.Router();
 
-module.exports = app => {
-
-    app.get('/', (req, res) => {
-        res.status(200).render('index.html', {
-            title: 'Stratus - Index'
-        });
+router.get('/', (_req, res) => {
+    res.status(200).render('index.html', {
+        message: 'Index'
     });
+});
 
-    app.get('/foo', (req, res) => {
-        res.status(200).send({message: 'Foo'});
-    });
+router.get('/foo', (_req, res) => {
+    res.status(200).send({message: 'Foo'});
+});
 
-    app.get('/bar', (req, res) => {
-        res.status(200).send({message: 'Bar'});
-    });
+router.get('/bar', (_req, res) => {
+    res.status(200).send({message: 'Bar'});
+});
 
-};
+module.exports = router;
