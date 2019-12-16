@@ -55,6 +55,7 @@ module.exports = {
       // Copia estáticos
       { from: 'app/views', to: 'app/views' },
       { from: 'app/public', to: 'app/public', ignore: ['*.scss','robots.*.txt'] },
+      { from: 'app/public/img/favicon/favicon.ico', to: 'app/public/favicon.ico' },
       {
         from: isDevMode ? 'app/public/robots.dev.txt' : 'app/public/robots.prd.txt', to: 'app/public/robots.txt'
       }

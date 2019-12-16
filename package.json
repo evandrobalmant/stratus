@@ -12,6 +12,8 @@
     "express": "^4.17.1",
     "lodash": "^4.17.15",
     "nunjucks": "^3.2.0",
+    "nunjucks-date-filter-locale": "^1.4.3",
+    "nunjucks-minify-loaders": "^1.0.2",
     "serverless-aws-static-file-handler": "^2.0.2",
     "serverless-http": "^2.0.2",
     "sitemap": "^3.2.2",

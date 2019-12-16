@@ -19,6 +19,8 @@ module.exports.run = async (event, context, _callback) => {
         event.pathParameters.proxy = event.path;
         return fileHandler.get(event, context);
     }
+    global.event_path = (event.path.endsWith('/')) ? event.path : event.path+'/';
+    
     // Senão: executa handler das rotas
     return handler(event, context);
 }
