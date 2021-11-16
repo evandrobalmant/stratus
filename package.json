@@ -20,7 +20,7 @@
     "source-map-support": "^0.5.10"
   },
   "devDependencies": {
-    "aws-sdk": "^2.503.0",
+    "aws-sdk": "^2.814.0",
     "bootstrap": "^4.0.0",
     "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.1.0",
