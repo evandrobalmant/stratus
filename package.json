@@ -28,7 +28,7 @@
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "sass-loader": "^7.1.0",
-    "serverless-offline": "^5.8.0",
+    "serverless-offline": "^12.0.4",
     "serverless-webpack": "^5.3.1",
     "source-map-support": "^0.5.13",
     "style-loader": "^0.23.1",
